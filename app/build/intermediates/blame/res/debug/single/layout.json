@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/josee/android-kotlin-fundamentals-starter-apps/DevBytes-starter/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/devbyte_item.xml",
+        "source": "/home/josee/android-kotlin-fundamentals-starter-apps/DevBytes-starter/app/src/main/res/layout/devbyte_item.xml"
+    },
+    {
+        "merged": "/home/josee/android-kotlin-fundamentals-starter-apps/DevBytes-starter/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_dev_byte.xml",
+        "source": "/home/josee/android-kotlin-fundamentals-starter-apps/DevBytes-starter/app/src/main/res/layout/fragment_dev_byte.xml"
+    }
+]
