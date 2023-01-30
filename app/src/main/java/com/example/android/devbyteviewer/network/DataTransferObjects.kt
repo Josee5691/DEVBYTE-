@@ -63,4 +63,5 @@ fun NetworkVideoContainer.asDomainModel(): List<DevByteVideo> {
                 updated = it.updated,
                 thumbnail = it.thumbnail)
     }
+
 }
