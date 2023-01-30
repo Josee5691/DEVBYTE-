@@ -29,21 +29,21 @@ import kotlinx.coroutines.withContext
 
 // repository for fetching devbyte videos from the network and storing them on disk
 
-class VideosRepository(private val database: VideoDatabase){
+class VideosRepository(private val database: VideoDatabase) {
     //refresh the videos stored in the offline cache
     //uses IO dispatcher to ensure the database insert database operation
-    suspend fun refreshVideo(){
+    suspend fun refreshVideo() {
         //make the function safe to call from any thread
-        withContext(Dispatchers.IO){
+        withContext(Dispatchers.IO) {
             // fetch the devbyte playlist from the network
             val playlist = DevByteNetwork.devbytes.getPlaylist()
 
             //store the playlist to room database
             database.videoDao.insertAll(playlist.asDatabaseModel())
         }
+    }
 
-        val videos: LiveData<List<DevByteVideo>> = Transformations.map(database.videoDao.getVideos()){
-            it.asDomainModel()
-        }
+    val videos: LiveData<List<DevByteVideo>> = Transformations.map(database.videoDao.getVideos()) {
+        it.asDomainModel()
     }
 }
