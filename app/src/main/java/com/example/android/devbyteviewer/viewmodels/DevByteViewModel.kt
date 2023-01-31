@@ -23,9 +23,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.android.devbyteviewer.database.getDatabase
-import com.example.android.devbyteviewer.domain.DevByteVideo
-import com.example.android.devbyteviewer.network.DevByteNetwork
+import com.example.android.devbyteviewer.database.VideoDatabase
 import com.example.android.devbyteviewer.network.asDomainModel
 import com.example.android.devbyteviewer.repository.VideosRepository
 import kotlinx.coroutines.*
@@ -49,7 +47,7 @@ class DevByteViewModel(application: Application) : AndroidViewModel(application)
      */
 
     //the data source where the view model will fetch results from
-    private val videosRepository = VideosRepository(getDatabase(application))
+    private val videosRepository = VideosRepository(VideoDatabase.getInstance(application))
     val playlist = videosRepository.videos
     /**
      * Event triggered for network error. This is private to avoid exposing a
